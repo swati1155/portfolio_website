@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Swati Pandey | ML Engineer </title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="./assets/images/name_logo_black.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    </head>
+
+    <body>
+
+        <header>
+            <nav id="nav">
+                <div class="header">
+                    <div class="logo">
+                        <img src="./assets/images/name_logo_black.png" alt="Swati Pandey">
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li>
+                            <a href="./assets/files/Resume - Swati Pandey.pdf" target="_blank" class="nav-resume-btn">
+                                Resume
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <nav id="hamburger-nav">
+                <div class="header">
+                    <div class="logo">
+                        <img src="./assets/images/name_logo_black.png" alt="Swati Pandey">
+                    </div>
+                    <div class="hamburger-menu">
+                        <div class="hamburger-icon" onclick="toggleMenu()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="menu-links">
+                            <li><a href="#Home" onclick="toggleMenu()">Home</a></li>
+                            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                            <li>
+                                <a href="./files/Resume - Swati Pandey.pdf" target="_blank" class="nav-resume-btn" onclick="toggleMenu()">
+                                    Resume
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+
+            <section id="home">
+                <div class="welcome_section">
+                    <h1 class="name_text">Swati Pandey</h1>
+                    <p class="welcome_text">Hello! Glad you're here. Take a look around and see what I've been building with data.</p>
+                </div>
+                <div class="profile_pic_container">
+                    <img src="./assets/images/profile_photo.PNG" alt="Profile Picture" />
+                </div>
+            </section>
+
+            <section id="projects">
+                <h1 class="title_text">Projects</h1>
+
+                <div class="projects_filter_wrapper">
+                    <div class="projects_filter">
+                        <ul class="filter_list">
+                            <li class="active" data-filter="*">All Categories</li>
+                            <li data-filter=".engg">ML Engineering</li>
+                            <li data-filter=".ops">MLOps</li>
+                            <li data-filter=".applied">Applied ML</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects_container">
+                    <div class="projects grid"> 
+                        <div class="project_tile engg grid-item">
+                            <div class="tile_content">
+                                <img src="./assets/project_images/proj1.jpg" class="project_img"/>
+                                <h2 class="projects_name">Project Title - 1</h2>
+                                <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae
+                                </p> 
+                            </div>
+                            
+                            <div class="btn_container">
+                                 <a href="https://medium.com/python-in-plain-english/revitalizing-cyclistic-bike-share-program-an-in-depth-data-exploration-556b52512bf8" target="_blank" class="btn">
+                                    View Project
+                                </a>
+                            </div> 
+                        </div>
+                        <div class="project_tile ops grid-item">
+                            <div class="tile_content">
+                                <img src="./assets/project_images/proj2.jpg" class="project_img"/>
+                                <h2 class="projects_name">Project Title - 2</h2>
+                                <p>
+                                    vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni
+                                </p> 
+                            </div>
+
+                            <div class="btn_container">
+                                <a href="https://medium.com/python-in-plain-english/revitalizing-cyclistic-bike-share-program-an-in-depth-data-exploration-556b52512bf8" target="_blank" class="btn">
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project_tile ops grid-item">
+                            <div class="tile_content">
+                                <img src="./assets/project_images/proj3.jpg" class="project_img"/>
+                                <h2 class="projects_name">Project Title - 3</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                </p> 
+                            </div>
+
+                            <div class="btn_container">
+                                <a href="https://medium.com/python-in-plain-english/revitalizing-cyclistic-bike-share-program-an-in-depth-data-exploration-556b52512bf8" target="_blank" class="btn">
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project_tile ops grid-item">
+                            <div class="tile_content">
+                                <img src="./assets/project_images/proj4.jpg" class="project_img"/>
+                                <h2 class="projects_name">Project Title - 4</h2>
+                                <p>
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                </p> 
+                            </div>
+
+                            <div class="btn_container">
+                                <a href="https://medium.com/python-in-plain-english/revitalizing-cyclistic-bike-share-program-an-in-depth-data-exploration-556b52512bf8" target="_blank" class="btn">
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project_tile ops grid-item">
+                            <div class="tile_content">
+                                <img src="./assets/project_images/proj5.jpg" class="project_img"/>
+                                <h2 class="projects_name">Project Title - 5</h2>
+                                <p>
+                                    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+                                </p> 
+                            </div>
+
+                            <div class="btn_container">
+                                <a href="https://medium.com/python-in-plain-english/revitalizing-cyclistic-bike-share-program-an-in-depth-data-exploration-556b52512bf8" target="_blank" class="btn">
+                                    View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="about">
+                <h1 class="title_text">About</h1>
+                <div class="text_container">
+                    <p>
+                        I'm a Data Scientist. I’ve always loved solving problems with math and coding, 
+                        and machine learning turned out to be the perfect playground where both come together.
+                    </p>
+                    <br>
+                    <p>
+                        I enjoy building models from the ground up and taking them through the full lifecycle, 
+                        creating systems that actually run and can be used by others.
+                    </p>
+                    <br>
+                    <p>
+                        I’m constantly curious and enjoy experimenting with new techniques and tools. 
+                        I’m always learning something new, trying out different ideas, 
+                        and building small projects on the side.
+                    </p>
+                </div>
+            </section>
+        
+            <footer class="site-footer">
+                <div class="footer-logos">
+                    <a href="https://LinkedIn" target="_blank">
+                        <img src="./assets/socials_logo/linkedin1.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://GitHub" target="_blank">
+                        <img src="./assets/socials_logo/github1.png" alt="GitHub">
+                    </a>
+                    <a href="https://medium" target="_blank">
+                        <img src="./assets/socials_logo/medium1.png" alt="medium">
+                    </a>
+                    <a href="https://kaggle" target="_blank">
+                        <img src="./assets/socials_logo/kaggle1.png" alt="kaggle">
+                    </a>
+                </div>
+                <p class="footer-text">Copyright © 2025 Swati Pandey. All Rights Reserved.</p>
+            </footer>
+
+        </main>
+
+    <script src="script.js"></script>
+    </body>
+
+</html>

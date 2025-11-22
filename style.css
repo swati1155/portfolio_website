@@ -1,0 +1,514 @@
+/* ------------------- General ------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    color: #555;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: rgb(96, 145, 204);
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(96, 145, 204);
+}
+
+/* TRANSITION */
+
+a {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#home, #projects, #about {
+    scroll-margin-top: 150px; 
+}
+
+
+/* ============================================ Header starts here ============================================ */
+
+/* ------------------- Desktop Nav ------------------- */
+.header {
+    width: 100%;
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, top 0.3s ease;
+    position: relative;
+    z-index: 1000;
+}
+
+.header.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+.nav-links {
+    margin-top: 0;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+    align-items: center; 
+}
+
+.nav-links li {
+    display: flex;       
+    align-items: center; 
+}
+
+.logo img {
+    max-width: 60px;
+    height: auto;
+}
+
+.nav-resume-btn {
+    background: linear-gradient(90deg, #9b60cc, #e8a127);
+    color: white !important;
+    padding: 8px 18px;
+    border-radius: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none !important;
+    border: none;
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-resume-btn:hover {
+    color: white !important;
+    text-decoration: none !important;
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+/* ------------------- Hamburger Nav ------------------- */
+#hamburger-nav {
+    display: none;
+}
+
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a:hover {
+    color: rgb(96, 145, 204);
+}
+
+.menu-links li {
+    list-style: none;
+}
+
+.menu-links.open {
+    max-height: 300px;
+}
+
+.menu-links .nav-resume-btn {
+    padding: 10px 18px;
+    display: block;
+    text-align: center;
+}
+
+.hamburger-icon.open span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:nth-child(1),
+.hamburger-icon span:nth-child(2),
+.hamburger-icon span:nth-child(3) {
+    transform: none;
+}
+
+/* ============================================ Header ends here ============================================ */
+
+
+/* ============================================ Sections start here ============================================ */
+
+main {
+    margin-top: 10px;
+}
+
+section {
+    padding-top: 4vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+
+/* ------------------- Home ------------------- */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem !important;
+    height: 85vh;
+}
+
+.profile_pic_container {
+    display: flex;
+    height: 475px;
+    width: 475px;
+    margin: auto 0;
+}
+
+.welcome_section {
+    align-self: center;
+    text-align: center;
+}
+
+.welcome_section p {
+    font-weight: 600;
+}
+
+.name_text {
+    font-size: 3rem;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.name_text::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3.5px;
+    background: linear-gradient(90deg, #9b60cc, #e8a127);
+    border-radius: 1px;
+}
+
+.welcome_text {
+    text-align: center;
+    justify-content: center; 
+    max-width: 500px;
+}
+
+
+/* ------------------- Projects ------------------- */
+#projects {
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.projects_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3.5rem;
+    margin-top: 2rem;
+}
+
+.project_img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---- Projects Filter Bar ---- */
+.projects_filter_wrapper {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects_filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    width: 900px !important;
+}
+
+.projects_filter ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    background-color: #f7f7f7;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    width: 900px;
+}
+
+.projects_filter li {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+    font-weight: 600;
+    color: #555;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.projects_filter li.active {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(90deg, #9b60cc, #e8a127);
+}
+
+.projects_filter li:not(.active):hover {
+    background-color: #e0e0e0;
+}
+
+/* ---- Project Tiles ---- */
+.projects.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.projects.grid .project_tile {
+    flex: 1 1 45%;
+    min-width: 450px;
+    max-width: 500px;
+    box-sizing: border-box;
+    transition: all 0.4s ease;
+}
+
+.hide {
+    display: none !important;
+}
+
+.project_tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1.5rem;
+    max-width: 540px;
+    text-align: left;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tile_content img.project_img {
+    width: 100%;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.tile_content {
+    flex: 1;
+}
+
+.project_tile:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Buttons ---- */
+.btn_container {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.btn {
+    background: linear-gradient(90deg, #9b60cc, #e8a127);
+    color: white !important;
+    padding: 8px 12px;
+    border-radius: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none !important;
+    border: none;
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+    color: white !important;
+    text-decoration: none !important;
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+/* ------------------- About ------------------- */
+#about {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.title_text {
+    font-size: 2.5rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.title_text::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3.5px;
+    background: linear-gradient(90deg, #9b60cc, #e8a127);
+    border-radius: 1px;
+}
+
+.text_container {
+    margin: 2rem auto;
+}
+
+.text_container p {
+    color: #555;
+    line-height: 1.6;
+    text-align: left;
+}
+
+
+/* ============================================ Sections end here ============================================ */
+
+
+/* ============================================ Footer starts here ============================================ */
+
+.site-footer {
+    background-color: #f5f5f5; /* slightly darker than white */
+    padding: 150px 20px; /* increased height */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* space between logos and text */
+}
+
+.footer-logos {
+    display: flex;
+    gap: 45px; /* space between logos */
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logos a img {
+    width: 35px;      /* fixed icon size */
+    height: 35px;
+    opacity: 0.6;     /* translucent */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-logos a img:hover {
+    opacity: 0.9;       /* fully visible on hover */
+    transform: scale(1.1); /* slight grow effect */
+}
+
+.footer-text {
+    color: #555;      /* slightly grayish text */
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ============================================ Footer ends here ============================================ */

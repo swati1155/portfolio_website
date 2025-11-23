@@ -35,14 +35,30 @@ a:hover {
     text-decoration-color: rgb(96, 145, 204);
 }
 
-/* TRANSITION */
-
 a {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-#home, #projects, #about {
-    scroll-margin-top: 150px; 
+#home, #about {
+    scroll-margin-top: 110px; 
+}
+
+#projects {
+    scroll-margin-top: 100px; 
+}
+
+@media (max-width: 768px) {
+    main {
+        padding-top: 90px; /* adjust based on hamburger bar height */
+    }
+
+    #home {
+        scroll-margin-top: 150px; /* height of your sticky hamburger bar */
+    }
+
+    #projects, #about {
+        scroll-margin-top: 20px; /* height of your sticky hamburger bar */
+    }
 }
 
 
@@ -51,9 +67,9 @@ a {
 /* ------------------- Desktop Nav ------------------- */
 .header {
     width: 100%;
-    padding: 15px 0px;
+    padding: 15px 13rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.8);
     transition: background-color 0.3s ease, box-shadow 0.3s ease, top 0.3s ease;
@@ -156,13 +172,25 @@ nav ul li {
 .menu-links {
     position: absolute;
     top: 100%;
-    right: 0%;
+    right: 0;
     background-color: white;
-    width: fit-content;
-    max-height: 0;
+    width: 100%;     
+    max-height: 0;      
     overflow: hidden;
-    transition: all 0.3 ease-in-out;
+    transition: max-height 0.3s ease-in-out;
+    border-top: none;    
+    box-shadow: none;  
+    z-index: 1001;
+    padding: 0;          
 }
+
+.menu-links.open {
+    max-height: 1000px;  
+    border-top: 1px solid #ddd; 
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    padding: 10px 0;  
+}
+
 
 .menu-links a {
     display: block;
@@ -180,10 +208,6 @@ nav ul li {
 
 .menu-links li {
     list-style: none;
-}
-
-.menu-links.open {
-    max-height: 300px;
 }
 
 .menu-links .nav-resume-btn {
@@ -210,6 +234,57 @@ nav ul li {
     transform: none;
 }
 
+@media (max-width: 768px) {
+    #nav {
+        display: none; 
+    }
+
+    #hamburger-nav {
+        display: block; 
+    }
+
+    #hamburger-nav .header {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;   
+        padding: 10px 15px;         
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #hamburger-nav .logo {
+        display: flex;
+        align-items: center;  
+        justify-content: center;
+    }
+
+    #hamburger-nav .logo img {
+        max-height: 35px;    
+        height: auto;
+        width: auto;
+    }
+
+    .menu-links {
+        width: 100%;
+        right: 0;
+    }
+
+    .menu-links a {
+        font-size: 1rem; 
+        padding: 8px 15px; 
+    }
+
+    .menu-links .nav-resume-btn {
+        font-size: 1rem; 
+        padding: 8px 15px;
+    }
+}
+
 /* ============================================ Header ends here ============================================ */
 
 
@@ -220,10 +295,15 @@ main {
 }
 
 section {
-    padding-top: 4vh;
-    margin: 0 10rem;
+    padding: 4vh 10rem;
     box-sizing: border-box;
     min-height: fit-content;
+}
+
+@media (min-width: 768px) {
+    section {
+        padding: 4vh 4rem; 
+    }
 }
 
 
@@ -238,9 +318,21 @@ section {
 
 .profile_pic_container {
     display: flex;
-    height: 475px;
-    width: 475px;
+    justify-content: center;
+    align-items: center;
+    width: 475px;      
+    height: 475px;    
+    min-width: 200px;   
+    min-height: 200px;  
     margin: auto 0;
+}
+
+.profile_pic_container img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
 }
 
 .welcome_section {
@@ -267,7 +359,7 @@ section {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;
+    width: 3.2em;
     height: 3.5px;
     background: linear-gradient(90deg, #9b60cc, #e8a127);
     border-radius: 1px;
@@ -277,6 +369,48 @@ section {
     text-align: center;
     justify-content: center; 
     max-width: 500px;
+}
+
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column;  
+        gap: 2rem;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .welcome_section {
+        width: 100%;         
+        text-align: center;   
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+    }
+
+    .profile_pic_container {
+        order: -1;  
+        width: 80%;
+        height: auto;
+    }
+
+    .profile_pic_container img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .name_text {
+        order: 2; 
+        font-size: 2rem;
+    }
+
+    .welcome_text {
+        order: 3;  
+        font-size: 1rem; 
+        max-width: 90%;
+        margin: 0 auto;
+    }
 }
 
 
@@ -313,20 +447,22 @@ section {
     justify-content: center;
     align-items: center;
     margin-bottom: 0.5rem;
-    width: 900px !important;
+    width: 900px;
+    flex-wrap: wrap;
 }
 
 .projects_filter ul {
-    align-items: center;
-    list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
     padding: 0;
     margin: 0;
     background-color: #f7f7f7;
     border-radius: 0;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    width: 900px;
+    width: 100%; 
 }
 
 .projects_filter li {
@@ -335,11 +471,12 @@ section {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    padding: 0;
+    padding: 0.5rem 1rem; 
     text-align: center;
     font-weight: 600;
     color: #555;
-    flex: 1;
+    flex: 1 1 auto; 
+    min-width: 120px; 
     transition: all 0.3s ease;
 }
 
@@ -352,6 +489,14 @@ section {
 
 .projects_filter li:not(.active):hover {
     background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .projects_filter li {
+        font-size: 0.9rem; 
+        padding: 0.5rem;  
+        min-width: 100px; 
+    }
 }
 
 /* ---- Project Tiles ---- */
@@ -408,6 +553,34 @@ section {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 768px) {
+    .projects_container {
+        padding: 0 1rem; /* adds horizontal padding */
+        gap: 1.5rem;     /* reduce gap for smaller screens */
+    }
+
+    .projects.grid .project_tile {
+        flex: 1 1 100%; 
+        min-width: 90%; 
+        padding: 1rem; 
+        max-width: 100%;
+    }
+
+    .project_tile .tile_content img.project_img {
+        width: 100%;
+        height: auto;
+    }
+
+    .project_tile .projects_name {
+        font-size: 1.2rem; 
+    }
+
+    .tile_content p {
+        font-size: 0.9rem;
+    }
+}
+
+
 /* ---- Buttons ---- */
 .btn_container {
     margin-top: 1.5rem;
@@ -435,15 +608,23 @@ section {
     opacity: 0.9;
 }
 
+@media (max-width: 768px) {
+    .btn_container .btn {
+        font-size: 0.85rem; 
+        padding: 6px 10px;
+    }
+}
+
 
 /* ------------------- About ------------------- */
 #about {
-    padding: 4rem 0;
+    padding: 4rem 10;
     text-align: center;
+    margin-top: 2rem;
 }
 
 .title_text {
-    font-size: 2.5rem;
+    font-size: 2.5rem; 
     position: relative;
     margin-bottom: 2rem;
 }
@@ -454,7 +635,7 @@ section {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    width: 100px; 
     height: 3.5px;
     background: linear-gradient(90deg, #9b60cc, #e8a127);
     border-radius: 1px;
@@ -470,6 +651,22 @@ section {
     text-align: left;
 }
 
+@media (max-width: 768px) {
+    .text_container {
+        margin: 2rem auto; 
+    }
+
+    .title_text {
+        font-size: 1.8rem;
+    }
+    .title_text::after {
+        width: 80px;
+    }
+
+    #about {
+        padding: 4rem 1rem; 
+    }
+}
 
 /* ============================================ Sections end here ============================================ */
 
@@ -477,38 +674,59 @@ section {
 /* ============================================ Footer starts here ============================================ */
 
 .site-footer {
-    background-color: #f5f5f5; /* slightly darker than white */
-    padding: 150px 20px; /* increased height */
+    background-color: #f5f5f5; 
+    padding: 120px 20px; 
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* space between logos and text */
+    gap: 20px; 
 }
 
 .footer-logos {
     display: flex;
-    gap: 45px; /* space between logos */
+    gap: 45px; 
     justify-content: center;
     align-items: center;
 }
 
 .footer-logos a img {
-    width: 35px;      /* fixed icon size */
+    width: 35px;  
     height: 35px;
-    opacity: 0.6;     /* translucent */
+    opacity: 0.6;   
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .footer-logos a img:hover {
-    opacity: 0.9;       /* fully visible on hover */
-    transform: scale(1.1); /* slight grow effect */
+    opacity: 0.9; 
+    transform: scale(1.1); 
 }
 
 .footer-text {
-    color: #555;      /* slightly grayish text */
+    color: #555; 
     font-size: 0.9rem;
     margin: 0;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        flex-direction: column;
+        justify-content: center;  
+        align-items: center; 
+        gap: 15px; 
+        padding: 60px 20px; 
+        text-align: center;
+    }
+
+    .footer-logos {
+        flex-wrap: wrap; 
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .footer-text {
+        margin-top: 0;
+    }
 }
 
 /* ============================================ Footer ends here ============================================ */

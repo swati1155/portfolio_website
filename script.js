@@ -19,6 +19,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
+
 // --------------- Project Filter Tabs with sliding animation ---------------
 document.addEventListener("DOMContentLoaded", () => {
     const filters = document.querySelectorAll(".projects_filter li");
@@ -41,3 +42,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+
+const hamburgerHeader = document.querySelector('#hamburger-nav .header');
+const placeholderHamburger = document.createElement('div');
+placeholderHamburger.style.height = hamburgerHeader.offsetHeight + 'px';
+placeholderHamburger.style.display = 'none';
+hamburgerHeader.parentNode.insertBefore(placeholderHamburger, hamburgerHeader.nextSibling);
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 5) {
+        hamburgerHeader.classList.add('scrolled');
+        placeholderHamburger.style.display = 'block';
+    } else {
+        hamburgerHeader.classList.remove('scrolled');
+        placeholderHamburger.style.display = 'none';
+    }
+});
+
+
+// --------------- toggle hamburger ---------------
+function toggleMenu() {
+    const menuLinks = document.querySelector(".menu-links");
+    const hamburger = document.querySelector(".hamburger-icon");
+    menuLinks.classList.toggle("open");
+    hamburger.classList.toggle("open");
+}

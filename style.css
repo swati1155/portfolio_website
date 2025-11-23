@@ -496,6 +496,10 @@ section {
 }
 
 @media (max-width: 768px) {
+    #projects {
+        padding-bottom: 1.5rem;
+    }
+    
     .projects_filter_wrapper {
         margin-top: 3.2rem; 
         margin-bottom: 3rem; 
@@ -671,6 +675,10 @@ section {
 }
 
 @media (max-width: 768px) {
+    #about {
+        margin-top: 1rem;
+    }
+
     .text_container {
         margin: 2rem auto; 
     }
